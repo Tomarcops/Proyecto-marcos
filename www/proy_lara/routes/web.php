@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+use App\Http\Controllers\CasillaController;
+use App\Http\Controllers\CandidatoController;
+use App\Http\Controllers\EleccionController;
+use App\Http\Controllers\FuncionarioController;
+use App\Http\Controllers\RolController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +22,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('casilla', CasillaController::class);
+Route::resource('candidato', CandidatoController::class);
+Route::resource('eleccion', EleccionController::class);
+Route::resource('funcionario', FuncionarioController::class);
+Route::resource('rol', RolController::class);

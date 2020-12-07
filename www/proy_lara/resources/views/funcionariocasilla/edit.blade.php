@@ -1,0 +1,72 @@
+@extends('plantilla')
+@section('content')
+<style>
+	.uper {
+		margin-top: 40px;
+	}
+</style>
+<div class="card uper">
+	<div class="card-header">
+		Editar Funcionario
+	</div>
+	<div class="card-body">
+		@if ($errors->any())
+		<div class="alert alert-danger">
+			<ul>
+				@foreach ($errors->all() as $error)
+				<li>{{ $error }}</li>
+				@endforeach
+			</ul>
+		</div><br />
+		@endif
+		<form method="POST"
+		action="{{ route('funcionariocasilla.update', $funcionariocasilla->id) }}"
+		enctype="multipart/form-data">
+		{{ csrf_field() }}
+		@method('PUT')
+		<div class="form-group">
+			@csrf
+			<label for="id">ID:</label>
+			<input type="text"
+			class="form-control"
+			readonly="true"
+			value="{{$funcionariocasilla->id}}"
+			name="id"/>
+		</div>
+		<div class="form-group">
+			@csrf
+			<label for="funcionario_id">funcionario_id:</label>
+			<input type="text"
+			value="{{$funcionariocasilla->funcionario_id}}"
+			class="form-control"
+			name="funcionario_id"/>
+		</div>
+		<div class="form-group">
+			@csrf
+			<label for="casilla_id">casilla_id:</label>
+			<input type="text"
+			value="{{$funcionariocasilla->casilla_id}}"
+			class="form-control"
+			name="casilla_id"/>
+		</div>
+		<div class="form-group">
+			@csrf
+			<label for="rol_id">rol_id:</label>
+			<input type="text"
+			value="{{$funcionariocasilla->rol_id}}"
+			class="form-control"
+			name="rol_id"/>
+		</div>
+		<div class="form-group">
+			@csrf
+			<label for="eleccion_id">eleccion_id:</label>
+			<input type="text"
+			value="{{$funcionariocasilla->eleccion_id}}"
+			class="form-control"
+			name="eleccion_id"/>
+		</div>
+		<button type="submit" class="btn btn-primary">Guardar</button>
+	</form>
+</div>
+</div>
+@endsection
