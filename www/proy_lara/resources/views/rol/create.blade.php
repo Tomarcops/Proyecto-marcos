@@ -24,10 +24,14 @@
 			<div class="form-group">
 				@csrf
 				<label for="descripcion">Descripcion:</label>
-				<input type="text" class="form-control" name="descripcion" maxlength="100" />
+				<input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="100" />
 			</div>
-			<button type="submit" class="btn btn-primary">Guardar</button>
+			<button type="submit" class="btn btn-primary" onClick="return validate ()">Guardar</button>
 		</form>
 	</div>
 </div>
 @endsection
+
+@section('page-script')
+    <script type="text/javascript" src="/js/rol.js"></script>
+@stop

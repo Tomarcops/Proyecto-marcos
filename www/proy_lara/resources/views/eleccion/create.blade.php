@@ -25,40 +25,44 @@
 			<div class="form-group">
 				@csrf
 				<label for="periodo">Periodo:</label>
-				<input type="text" class="form-control" name="periodo" maxlength="100" />
+				<input type="text" class="form-control" name="periodo" id="periodo" maxlength="100" />
 			</div>
 			<div class="form-group">
 				@csrf
 				<label for="fecha">fecha:</label>
-				<input type="date" class="form-control" name="fecha" maxlength="11" />
+				<input type="date" class="form-control" name="fecha" id="fecha" maxlength="11" />
 			</div>
 			<div class="form-group">
 				@csrf
 				<label for="fechaapertura">Fecha apertura:</label>
-				<input type="date" class="form-control" name="fechaapertura" maxlength="11" />
+				<input type="date" class="form-control" name="fechaapertura" id="fechaapertura" maxlength="11" />
 			</div>
 			<div class="form-group">
 				@csrf
 				<label for="horaapertura">Hora apertura:</label>
-				<input type="time" class="form-control" name="horaapertura" maxlength="20" />
+				<input type="time" class="form-control" name="horaapertura" id="horaapertura" maxlength="20" />
 			</div>
 			<div class="form-group">
 				@csrf
 				<label for="fechacierre">Fecha cierre:</label>
-				<input type="date" class="form-control" name="fechacierre" maxlength="11" />
+				<input type="date" class="form-control" name="fechacierre" id="fechacierre" maxlength="11" />
 			</div>
 			<div class="form-group">
 				@csrf
 				<label for="horacierre">Hora cierre:</label>
-				<input type="time" class="form-control" name="horacierre" maxlength="20" />
+				<input type="time" class="form-control" name="horacierre" id="horacierre" maxlength="20" />
 			</div>
 			<div class="form-group">
 				@csrf
 				<label for="observaciones">Observaciones:</label>
-				<input type="text" class="form-control" name="observaciones" maxlength="100" />
+				<input type="text" class="form-control" name="observaciones" id="observaciones" maxlength="100" />
 			</div>
-			<button type="submit" class="btn btn-primary">Guardar</button>
+			<button type="submit" class="btn btn-primary"onClick="return validate ()">Guardar</button>
 		</form>
 	</div>
 </div>
 @endsection
+
+@section('page-script')
+    <script type="text/javascript" src="/js/eleccion.js"></script>
+@stop 

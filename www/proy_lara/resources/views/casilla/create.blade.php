@@ -24,10 +24,15 @@ Agregar Casillas
 <div class="form-group">
 @csrf
 <label for="ubicacion">Ubicación:</label>
-<input type="text" class="form-control" name="ubicacion"/>
+<input type="text" class="form-control" name="ubicacion" id="ubicacion" />
 </div>
-<button type="submit" class="btn btn-primary">Guardar</button>
+<button type="submit" class="btn btn-primary"onClick="return validate ()">Guardar</button>
 </form>
 </div>
 </div>
 @endsection
+
+
+@section('page-script')
+    <script type="text/javascript" src="/js/casilla.js"></script>
+@stop

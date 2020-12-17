@@ -51,10 +51,15 @@
 			<div class="form-group">
 				@csrf
 				<label for="imei">imei:</label>
-				<input type="text" class="form-control" name="imei" maxlength="200" />
+				<input type="text" class="form-control" name="imei" id="imei" maxlength="200" />
 			</div>
-			<button type="submit" class="btn btn-primary">Guardar</button>
+			<button type="submit" class="btn btn-primary"onClick="return validate ()">Guardar</button>
 		</form>
 	</div>
 </div>
 @endsection
+
+
+@section('page-script')
+    <script type="text/javascript" src="/js/imeiautorizado.js"></script>
+@stop

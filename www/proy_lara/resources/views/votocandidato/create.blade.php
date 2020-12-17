@@ -42,10 +42,16 @@
 			<div class="form-group">
 				@csrf
 				<label for="votos">votos:</label>
-				<input type="number" class="form-control" name="votos" min="1" max="100"/>
+				<input type="number" class="form-control" name="votos" id="votos" min="1" max="100"/>
 			</div>
-			<button type="submit" class="btn btn-primary">Guardar</button>
+			<button type="submit" class="btn btn-primary" onClick="return validate ()">Guardar</button>
 		</form>
 	</div>
 </div>
 @endsection
+
+
+
+@section('page-script')
+    <script type="text/javascript" src="/js/votocandidato.js"></script>
+@stop

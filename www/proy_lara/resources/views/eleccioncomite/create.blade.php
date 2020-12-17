@@ -24,7 +24,7 @@
             <div class="form-group">
                 @csrf
                 <label for="eleccion_id">eleccion_id:</label>
-                <select name="eleccion_id">
+                <select name="eleccion_id" id="eleccion_id">
                 @foreach ($elecciones as $eleccion)
                 <option value="{{$eleccion->id}}"> {{ $eleccion->periodo}}</option>
                 @endforeach
@@ -33,7 +33,7 @@
             <div class="form-group">
                 @csrf
                 <label for="funcionario_id">funcionario_id:</label>
-                <select name="funcionario_id">
+                <select name="funcionario_id" id="funcionario_id">
                 @foreach ($funcionarios as $funcionario)
                 <option value="{{$funcionario->id}}"> {{ $funcionario->nombrecompleto}}</option>
                 @endforeach
@@ -42,15 +42,19 @@
             <div class="form-group">
                 @csrf
                 <label for="rol_id">Rol:</label>
-                <select name="rol_id">
+                <select name="rol_id" id="rol_id">
                 @foreach ($roles as $rol)
                 <option value="{{$rol->id}}"> {{ $rol->descripcion}}</option>
                 @endforeach
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary" onClick="return validate ()">Guardar</button>
         </form>
     </div>
 </div>
 @endsection
+
+@section('page-script')
+    <script type="text/javascript" src="/js/eleccioncomite.js"></script>
+@stop

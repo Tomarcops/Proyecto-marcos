@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers\Api;
+
 use App\Http\Controllers\Api\GenericController as GenericController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -13,9 +14,9 @@ class CandidatoController extends GenericController
  */
  public function index()
  {
- $candidatos = Candidato::all();
- $resp = $this->sendResponse($candidatos, "Listado de candidatos");
- return ($resp);
+    $candidatos = Candidato::all();
+    $resp = $this->sendResponse($candidatos, "Listado de candidatos");
+    return ($resp);
  }
  /**
  * Show the form for creating a new resource.
@@ -34,9 +35,9 @@ class CandidatoController extends GenericController
  */
  public function store(Request $request)
  {
- $validacion = Validator::make($request->all(), [
- 'nombrecompleto' => 'unique:candidato|required|max:200',
- 'sexo' =>'required'
+    $validacion = Validator::make($request->all(), [
+    'nombrecompleto' => 'unique:candidato|required|max:200',
+    'sexo' =>'required'
  ]);
 
 
@@ -54,12 +55,12 @@ class CandidatoController extends GenericController
  $perfilcandidato = $perfil->getClientOriginalName();
  }
 
- $campos = array(
- 'nombrecompleto' => $request->nombrecompleto,
- 'sexo' => $request->sexo,
- 'foto' => $fotocandidato,
- 'perfil' => $perfilcandidato,
- );
+    $campos = array(
+    'nombrecompleto' => $request->nombrecompleto,
+    'sexo' => $request->sexo,
+    'foto' => $fotocandidato,
+    'perfil' => $perfilcandidato,
+    );
 
  if ($request->hasFile('foto')) $foto->move(public_path('img'), $fotocandidato);
  if ($request->hasFile('perfil')) $perfil->move(public_path('img'), $perfilcandidato);

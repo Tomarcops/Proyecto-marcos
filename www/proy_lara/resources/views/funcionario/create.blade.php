@@ -24,15 +24,20 @@
 			<div class="form-group">
 				@csrf
 				<label for="nombrecompleto">Nombre de el funcionario:</label>
-				<input type="text" class="form-control" name="nombrecompleto" maxlength="200" />
+				<input type="text" class="form-control" name="nombrecompleto" maxlength="200" id="nombrecompleto" />
 			</div>
 			<div class="form-group">
 				@csrf
 				<label for="sexo">Sexo:</label>
-				<input type="text" class="form-control" name="sexo" maxlength="1" />
+				<input type="text" class="form-control" name="sexo" maxlength="1" id="sexo" />
 			</div>
-			<button type="submit" class="btn btn-primary">Guardar</button>
+			<button type="submit" class="btn btn-primary" onClick="return validate ()">Guardar</button>
 		</form>
 	</div>
 </div>
 @endsection
+
+
+@section('page-script')
+    <script type="text/javascript" src="/js/funcionario.js"></script>
+@stop
