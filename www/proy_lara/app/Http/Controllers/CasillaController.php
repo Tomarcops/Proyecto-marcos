@@ -1,8 +1,11 @@
 <?php
+use Barryvdh\DomPDF\Facade as PDF; //--- Se agregó esta línea
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Casilla;
+use Barryvdh\DomPDF\Facade as PDF;
 class CasillaController extends Controller
+
 {
     /**
     * Display a listing of the resource.
@@ -21,7 +24,6 @@ class CasillaController extends Controller
     */
     public function create()
     {
-
         return view('casilla/create');
     }
     /**
@@ -89,4 +91,16 @@ class CasillaController extends Controller
         $casilla->delete();
         return redirect('casilla');
     }
+
+
+    public function generatepdf()
+{
+
+$casillas = Casilla::all();
+$pdf = PDF::loadView('casilla/vista', ['casillas'=>$casillas]);
+return $pdf->strean('casilla.pdf');
+
+}
 } //--- end class
+
+
